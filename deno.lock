@@ -1,0 +1,15 @@
+{
+  "version": "3",
+  "remote": {
+    "https://deno.land/x/avatar@v1.0.0/lib/background.ts": "183c23927699de5ce2cb196e7376df07364d6eb02d1394ff01f044be480aac85",
+    "https://deno.land/x/avatar@v1.0.0/lib/body.ts": "88cce09b80d0deb3b5edbcaf1a005a7321adc0df61b4278f9b8670cad72fe1ef",
+    "https://deno.land/x/avatar@v1.0.0/lib/eyes.ts": "f05250a147a6a81d2e0e157160ff32d2905f2c71d2562eca374c7ab16c359395",
+    "https://deno.land/x/avatar@v1.0.0/lib/glasses.ts": "0e59f25a2e7fcc23491229282b14c96cd12a61815f36915758497160e6aab03b",
+    "https://deno.land/x/avatar@v1.0.0/lib/hair.ts": "df29843156a3998f4c21b4eef9ec57926b3db96d59e4e6414490714e31ab2951",
+    "https://deno.land/x/avatar@v1.0.0/lib/head.ts": "14fba544476bb76b2085008ec84d444fd7661a2cfb921bcadc54fd11ea5c0f04",
+    "https://deno.land/x/avatar@v1.0.0/lib/mouth.ts": "b1745ef40934a92ae8cb40b8950f25342b127411864bc37a67b37abd1d5b4d48",
+    "https://deno.land/x/avatar@v1.0.0/lib/mustache.ts": "5a7c0db4867f8c9a0f7f633e40219b90f692cda86d52f01d431a4cee2fc39c98",
+    "https://deno.land/x/avatar@v1.0.0/lib/svg.ts": "bdd83e9b2b8045e8330ffbcdf30a0e2c2e699d1c50d1325000d9107b72d968ed",
+    "https://deno.land/x/avatar@v1.0.0/mod.ts": "9377a54894686e953d9e793d02b2fb7277344c0847a7d845b3e82b4972463f63"
+  }
+}
