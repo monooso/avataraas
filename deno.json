@@ -1,1 +1,6 @@
-{}
+{
+   "imports": {
+    "avatar/": "https://deno.land/x/avatar@v1.1.0/",
+    "std/": "https://deno.land/std@0.208.0/"
+  },
+}
