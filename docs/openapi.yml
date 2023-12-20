@@ -1,0 +1,62 @@
+openapi: 3.1.0
+info:
+  description: Avatars as a Service
+  version: 0.1.0
+  title: Avatars
+  contact:
+    email: code@stephenlewis.me
+  license:
+    name: MIT
+    url: https://github.com/monooso/avataraas/blob/main/LICENSE.txt
+paths:
+  /:
+    get:
+      summary: Generates an avatar
+      operationId: getAvatar
+      description: Generates an avatar using the given parameters.
+      parameters:
+        - in: query
+          name: format
+          description: The image format.
+          required: false
+          schema:
+            type: string
+            enum:
+              - png
+              - svg
+            default: svg
+        - in: query
+          name: key
+          description: Passing the same key will always generate the same avatar.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: radius
+          description: The corner radius, in pixels.
+          required: false
+          schema:
+            type: integer
+            format: int8
+            minimum: 0
+            default: 0
+        - in: query
+          name: size
+          description: The width and height, in pixels.
+          required: false
+          schema:
+            type: integer
+            format: int16
+            minimum: 8
+            maximum: 2048
+            default: 128
+      responses:
+        '200':
+          description: The generated avatar.
+          content:
+            image/png: {}
+            image/svg+xml:
+              schema:
+                type: string
+        '400':
+          description: bad input parameter
