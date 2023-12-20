@@ -23,3 +23,8 @@ endpoint accepts the following querystring parameters:
 ```bash
 curl "http://localhost:8000?key=jimbob&size=512" -o jimbob.svg
 ```
+
+## License
+
+Avatars as a Service is open source software, released under
+[the MIT license](./LICENSE.txt).
