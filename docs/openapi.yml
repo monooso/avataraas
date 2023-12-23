@@ -39,6 +39,7 @@ paths:
             type: integer
             format: int8
             minimum: 0
+            maximum: 1024
             default: 0
         - in: query
           name: size
