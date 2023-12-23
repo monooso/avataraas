@@ -1,6 +1,7 @@
 {
   "imports": {
-    "avatar/": "https://deno.land/x/avatar@v1.1.0/",
-    "std/": "https://deno.land/std@0.208.0/"
+    "avatar/": "https://deno.land/x/avatar@v1.3.0/",
+    "std/": "https://deno.land/std@0.208.0/",
+    "zod/": "https://deno.land/x/zod@v3.22.4/"
   }
 }
