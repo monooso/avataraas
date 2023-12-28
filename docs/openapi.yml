@@ -50,7 +50,7 @@ paths:
             format: int16
             minimum: 8
             maximum: 2048
-            default: 128
+            default: 64
       responses:
         '200':
           description: The generated avatar.

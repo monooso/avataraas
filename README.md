@@ -22,7 +22,7 @@ endpoint accepts the following querystring parameters:
 - `radius` (optional): An integer representing the corner (in pixels) of the
   generated avatar. Defaults to 0.
 - `size` (optional): An integer representing the width and height (in pixels) of
-  the generated avatar. Defaults to 128.
+  the generated avatar. Defaults to 64.
 
 See [the OpenAPI definition document](./docs/openapi.yml) for details.
 
