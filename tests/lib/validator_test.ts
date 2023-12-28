@@ -62,9 +62,9 @@ Deno.test("normalizeParams/1", async (t) => {
     assertObjectMatch(result, { size: 48 });
   });
 
-  await t.step("it uses a default size of 128", () => {
+  await t.step("it uses a default size of 64", () => {
     const result = normalizeParams({});
-    assertObjectMatch(result, { size: 128 });
+    assertObjectMatch(result, { size: 64 });
   });
 });
 

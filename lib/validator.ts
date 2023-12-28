@@ -1,16 +1,27 @@
 import { z } from "zod/mod.ts";
 
-const avatarParamsSchema = z.object({
+const defaultParams = {
+  format: "svg",
+  key: Date.now().toString(),
+  radius: 0,
+  size: 64,
+};
+
+const paramsSchema = z.object({
   format: z.string().toLowerCase().pipe(z.enum(["svg", "png"])).optional()
-    .default("svg"),
-  key: z.string().optional().default(Date.now().toString()),
-  radius: z.coerce.number().int().min(0).max(1024).optional().default(0),
-  size: z.coerce.number().int().min(8).max(2048).optional().default(128),
+    .default(defaultParams.format),
+  key: z.string().optional().default(defaultParams.key),
+  radius: z.coerce.number().int().min(0).max(1024).optional().default(
+    defaultParams.radius,
+  ),
+  size: z.coerce.number().int().min(8).max(2048).optional().default(
+    defaultParams.size,
+  ),
 });
 
-type AvatarParams = z.infer<typeof avatarParamsSchema>;
 type ErrorResult = ["error", Response];
 type OkResult = ["ok", Request];
+type Params = z.infer<typeof paramsSchema>;
 
 const normalizeMethod = (method: string) => method.toUpperCase();
 const normalizePath = (path: string) => path.endsWith("/") ? path : `${path}/`;
@@ -18,8 +29,8 @@ const normalizePath = (path: string) => path.endsWith("/") ? path : `${path}/`;
 /**
  * Normalizes the validated avatar parameters. Raises if the parameters are invalid.
  */
-function normalizeParams(params: Record<string, string>): AvatarParams {
-  return avatarParamsSchema.parse(params);
+function normalizeParams(params: Record<string, string>): Params {
+  return paramsSchema.parse(params);
 }
 
 /**
@@ -72,7 +83,7 @@ function validateMethod(
 function validateParams(request: Request): OkResult | ErrorResult {
   const url = new URL(request.url);
   const searchParams = Object.fromEntries(url.searchParams.entries());
-  const result = avatarParamsSchema.safeParse(searchParams);
+  const result = paramsSchema.safeParse(searchParams);
 
   if (result.success) {
     return ["ok", request];
@@ -88,8 +99,8 @@ function validateParams(request: Request): OkResult | ErrorResult {
 }
 
 export {
-  type AvatarParams,
   normalizeParams,
+  type Params,
   validateEndpoint,
   validateMethod,
   validateParams,
